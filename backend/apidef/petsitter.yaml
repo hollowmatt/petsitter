@@ -88,7 +88,7 @@ paths:
        required: true
    get:
      tags:
-      - Users
+      - Jobs
      summary: List jobs for User
      responses:
        '200':
@@ -178,7 +178,7 @@ paths:
        required: true
    get:
      tags:
-      - Jobs
+      - Job Applications
      summary: List Applications For Job
      responses:
        '200':
@@ -194,7 +194,7 @@ paths:
                      $ref: '#/components/schemas/JobApplication'
    post:
       tags:
-        - Jobs
+        - Job Applications
       summary: Create Job Application
       responses:
         '201':
