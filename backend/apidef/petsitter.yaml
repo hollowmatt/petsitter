@@ -17,7 +17,7 @@ paths: {}
 components:
   schemas: 
     User: 
-      type: integer
+      type: object
       properties:
         id:
           type: integer
@@ -29,3 +29,40 @@ components:
           type: array
           items:
             type: string
+    Job:
+      type: object
+      properties:
+        id: 
+          type: integer
+        creator_user_id:
+          type: integer
+        start_time:
+          type: string
+        activity:
+          type: string
+        Pet:
+          $ref: '#/components/schemas/Pet'
+    Pet:
+      type: object
+      properties:
+        pet_type:
+          type: string
+        name: 
+          type: string
+        age:
+          type: integer
+        breed:
+          type: string
+        size:
+          type: string
+    JobApplication:
+      type: object
+      properties:
+        id: 
+          type: integer
+        status:
+          type: string
+        user_id:
+          type: integer
+        job_id:
+          type: integer
