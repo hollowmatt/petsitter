@@ -13,9 +13,18 @@ info:
   license:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
     name: Apache 2.0
+tags:
+  - name: Users
+    description: Users of the Petsitter system (can be owner, petsitter, admin)
+  - name: Jobs
+    description: Jobs created by owners to have their pet looked after.
+  - name: Job Applications
+    description: Job applications by a pet sitter for a job.
 paths:
   /users:
     post:
+      tags:
+        - Users
       summary: Register a user
       responses:
         '201':
@@ -37,6 +46,8 @@ paths:
        in: path
        required: true
    get:
+     tags:
+      - Users
      summary: View User
      responses:
        '200':
@@ -46,6 +57,8 @@ paths:
              schema:
                $ref: '#/components/schemas/User'
    put:
+     tags:
+      - Users
      summary: Modify User
      responses:
        '200':
@@ -60,6 +73,8 @@ paths:
            schema:
              $ref: '#/components/schemas/User'
    delete:
+     tags:  
+      - Users
      summary: Delete User
      responses:
        '204':
@@ -72,6 +87,8 @@ paths:
        in: path
        required: true
    get:
+     tags:
+      - Users
      summary: List jobs for User
      responses:
        '200':
@@ -87,6 +104,8 @@ paths:
                     $ref: '#/components/schemas/Job'
   /jobs:
     get:
+      tags:
+        - Jobs
       summary: List all jobs
       responses:
         '200':
@@ -101,6 +120,8 @@ paths:
                     items:
                       $ref: '#/components/schemas/Job'
     post:
+      tags:
+        - Jobs
       summary: Create a job
       responses:
         '201':
@@ -122,6 +143,8 @@ paths:
        in: path
        required: true
    get:
+     tags:
+      - Jobs
      summary: View Job
      responses:
        '200':
@@ -131,6 +154,8 @@ paths:
              schema:
                $ref: '#/components/schemas/Job'
    put:
+     tags:
+      - Jobs
      summary: Modify Job
      responses:
        '200':
@@ -152,6 +177,8 @@ paths:
        in: path
        required: true
    get:
+     tags:
+      - Jobs
      summary: List Applications For Job
      responses:
        '200':
@@ -166,6 +193,8 @@ paths:
                    items:
                      $ref: '#/components/schemas/JobApplication'
    post:
+      tags:
+        - Jobs
       summary: Create Job Application
       responses:
         '201':
@@ -187,6 +216,8 @@ paths:
        in: path
        required: true
    put:
+     tags:
+      - Job Applications
      summary: Modify Job Application
      requestBody:
        description: Update the application details
