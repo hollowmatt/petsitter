@@ -1,5 +1,31 @@
-opeanapi: 3.0.3
+openapi: 3.0.3
 info:
   title: Petsitter API
-  version: ":0.1"
+  version: "0.1"
+  description: |-
+    This is a set of APIs for the Petsitter Application (which 
+    consists of a MongoDB database, a Node.js backend and a 
+    React.js frontend).  
+  
+  contact:
+    name: Matt H.
+    url: https://github.com/hollowmatt/petsitter
+  license:
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+    name: Apache 2.0
 paths: {}
+components:
+  schemas: 
+    User: 
+      type: integer
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        full_name:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
