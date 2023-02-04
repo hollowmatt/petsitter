@@ -13,3 +13,6 @@ TBD, but likely something like MongoDB
 
 ## API Definitions
 Will follow OpenAPI 3+ standards, using SwaggerUI.
+
+### Issue Tracker
+Issues and Features are tacked [here](https://github.com/hollowmatt/petsitter/issues)
