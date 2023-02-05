@@ -166,6 +166,13 @@ paths:
            application/json:
              schema:
                $ref: '#/components/schemas/Job'
+   delete:
+    tags:
+      - Jobs
+    summary: Delete Job
+    responses:
+      '204':
+        description: No Content
    put:
      tags:
       - Jobs
