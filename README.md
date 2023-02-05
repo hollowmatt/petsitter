@@ -2,6 +2,10 @@
 This repository is my companion to the Manning Press book 'Designing APIs with Swagger and OpenAPI'.  It 
 contains the FrontEnd, BackEnd, API definitions and any information on setup
 
+[View API Specs](https://hollowmatt.github.io/petsitter)
+
+---
+
 ## FrontEnd
 The Front End application will be React.js
 
