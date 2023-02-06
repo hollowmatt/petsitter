@@ -115,6 +115,37 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/Job'
+  /users/{id}/job-applicatiions:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Job Applications
+      summary: List applications for a given user
+      responses:
+       '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                two-items:
+                  summary: Two job applications
+                  value:
+                    items:
+                    - id: 123
+                      user_id: 123
+                      job_id: 123
+                      status: PENDING
+                    - id: 123
+                      user_id: 123
+                      job_id: 123
+                      status: COMPLETE
   /jobs:
     get:
       tags:
@@ -132,6 +163,41 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Job'
+              examples:
+                with-some-data:
+                  summary: With some data
+                  value:
+                    items:
+                    - id: 123
+                      creator_user_id: 345
+                      start_time: 2020-06-01T00:00:00Z
+                      end_time: 2020-06-02T00:00:00Z
+                      dog:
+                        name: Fido
+                        age: 3
+                        breed: Doberman
+                        size: medium
+                      activity: walk
+                    - id: 234
+                      creator_user_id: 345
+                      start_time: 2020-06-01T00:00:00Z
+                      end_time: 2020-06-03T00:00:00Z
+                      dog:
+                        name: Rex
+                        age: 2
+                        breed: Rottweiler
+                        size: large
+                      activity: sit
+                    - id: 234
+                      creator_user_id: 345
+                      start_time: 2020-06-01T00:00:00Z
+                      end_time: 2020-06-02T00:00:00Z
+                      dog:
+                        name: Blossom
+                        age: 2
+                        breed: Rottweiler
+                        size: large
+                      activity: walk
     post:
       tags:
         - Jobs
