@@ -12,6 +12,15 @@ The Front End application will be React.js
 ## BackEnd
 The Back End application will be based on Node.js, perhaps with Express.js
 
+## Mock API
+Using Prism for mocking APIs
+
+### Install Prism
+`npm install --global @stoplight/prism-cli`
+
+### Run Prism
+`prism mock -p 8080 ./backend/apidef/petsitter.yaml`
+
 ## Database/Storage
 TBD, but likely something like MongoDB
 
