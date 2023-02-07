@@ -39,6 +39,7 @@ paths:
       tags:
         - Users
       summary: Register a user
+      operationId: registerUser
       responses:
         '201':
           description: Creeated
@@ -62,6 +63,7 @@ paths:
      tags:
       - Users
      summary: View User
+     operationId: getUserById
      responses:
        '200':
          description: OK
@@ -73,6 +75,7 @@ paths:
      tags:
       - Users
      summary: Modify User
+     operationId: modifyUserById
      responses:
        '200':
          description: OK
@@ -89,6 +92,7 @@ paths:
      tags:  
       - Users
      summary: Delete User
+     operationId: deleteUserById
      responses:
        '204':
          description: No Content
@@ -103,6 +107,7 @@ paths:
      tags:
       - Jobs
      summary: List jobs for User
+     operationId: getJobsForUser
      responses:
        '200':
          description: OK
@@ -126,6 +131,7 @@ paths:
       tags:
         - Job Applications
       summary: List applications for a given user
+      operationId: getApplicationsForUser
       responses:
        '200':
           description: OK
@@ -151,6 +157,7 @@ paths:
       tags:
         - Jobs
       summary: List all jobs
+      operationId: getAllJobs
       responses:
         '200':
           description: OK
@@ -202,6 +209,7 @@ paths:
       tags:
         - Jobs
       summary: Create a job
+      operationId: createJob
       responses:
         '201':
           description: created
@@ -225,6 +233,7 @@ paths:
      tags:
       - Jobs
      summary: View Job
+     operationId: getJobById
      responses:
        '200':
          description: OK
@@ -236,6 +245,7 @@ paths:
     tags:
       - Jobs
     summary: Delete Job
+    operationId: deleteJobById
     responses:
       '204':
         description: No Content
@@ -266,6 +276,7 @@ paths:
      tags:
       - Job Applications
      summary: List Applications For Job
+     operationId: getApplicationsByJob
      responses:
        '200':
          description: OK
@@ -282,6 +293,7 @@ paths:
       tags:
         - Job Applications
       summary: Create Job Application
+      operationId: createJobApplication
       responses:
         '201':
           description: Created
@@ -305,6 +317,7 @@ paths:
      tags:
       - Job Applications
      summary: Modify Job Application
+     operationId: modifyJobApplication
      requestBody:
        description: Update the application details
        content:
@@ -372,5 +385,3 @@ components:
           type: integer
         job_id:
           type: integer
-
- 
