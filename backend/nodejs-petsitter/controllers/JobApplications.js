@@ -3,8 +3,8 @@
 var utils = require('../utils/writer.js');
 var JobApplications = require('../service/JobApplicationsService');
 
-module.exports.job_applicationsIdPUT = function job_applicationsIdPUT (req, res, next, body, id) {
-  JobApplications.job_applicationsIdPUT(body, id)
+module.exports.createJobApplication = function createJobApplication (req, res, next, body, id) {
+  JobApplications.createJobApplication(body, id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -13,8 +13,8 @@ module.exports.job_applicationsIdPUT = function job_applicationsIdPUT (req, res,
     });
 };
 
-module.exports.jobsIdJob_applicationsGET = function jobsIdJob_applicationsGET (req, res, next, id) {
-  JobApplications.jobsIdJob_applicationsGET(id)
+module.exports.getApplicationsByJob = function getApplicationsByJob (req, res, next, id) {
+  JobApplications.getApplicationsByJob(id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -23,8 +23,8 @@ module.exports.jobsIdJob_applicationsGET = function jobsIdJob_applicationsGET (r
     });
 };
 
-module.exports.jobsIdJob_applicationsPOST = function jobsIdJob_applicationsPOST (req, res, next, body, id) {
-  JobApplications.jobsIdJob_applicationsPOST(body, id)
+module.exports.getApplicationsForUser = function getApplicationsForUser (req, res, next, id) {
+  JobApplications.getApplicationsForUser(id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -33,8 +33,8 @@ module.exports.jobsIdJob_applicationsPOST = function jobsIdJob_applicationsPOST 
     });
 };
 
-module.exports.usersIdJob_applicatiionsGET = function usersIdJob_applicatiionsGET (req, res, next, id) {
-  JobApplications.usersIdJob_applicatiionsGET(id)
+module.exports.modifyJobApplication = function modifyJobApplication (req, res, next, body, id) {
+  JobApplications.modifyJobApplication(body, id)
     .then(function (response) {
       utils.writeJson(res, response);
     })

@@ -7,7 +7,7 @@
  * id Integer 
  * no response value expected for this operation
  **/
-exports.usersIdDELETE = function(id) {
+exports.deleteUserById = function(id) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -20,7 +20,7 @@ exports.usersIdDELETE = function(id) {
  * id Integer 
  * returns User
  **/
-exports.usersIdGET = function(id) {
+exports.getUserById = function(id) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -45,7 +45,7 @@ exports.usersIdGET = function(id) {
  * id Integer 
  * returns User
  **/
-exports.usersIdPUT = function(body,id) {
+exports.modifyUserById = function(body,id) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -69,7 +69,7 @@ exports.usersIdPUT = function(body,id) {
  * body User  (optional)
  * no response value expected for this operation
  **/
-exports.usersPOST = function(body) {
+exports.registerUser = function(body) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
