@@ -385,5 +385,3 @@ components:
           type: integer
         job_id:
           type: integer
-
- 
