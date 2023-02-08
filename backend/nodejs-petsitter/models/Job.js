@@ -10,7 +10,7 @@ exports.Job = new Schema({
   activity: String,
   created_at: Date,
   updated_at: Date,
-  dog: {
+  Pet: {
     name: String,
     age : Number,
     breed: String,      
@@ -25,6 +25,6 @@ exports.Job.methods.toResultFormat = function() {
     start_time : this.starts_at,
     end_time : this.ends_at,
     activity : this.activity,
-    dog : this.dog
+    Pet : this.Pet
   };
 };
