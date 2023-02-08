@@ -1,4 +1,6 @@
 'use strict';
+const mongoose = require('mongoose');
+const JobModel = mongoose.model('Job', require('../models/Job').Job);
 
 
 /**
@@ -77,28 +79,9 @@ exports.getAllJobs = function() {
  * id Integer 
  * returns Job
  **/
-exports.getJobById = function(id) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "creator_user_id" : 6,
-  "start_time" : "start_time",
-  "activity" : "activity",
-  "id" : 0,
-  "Pet" : {
-    "size" : "size",
-    "pet_type" : "pet_type",
-    "name" : "name",
-    "age" : 1,
-    "breed" : "breed"
-  }
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+exports.getJobById = async function(id) {
+  let job = await JobModel.findById(id);
+  return job.toResultFormat();
 }
 
 
