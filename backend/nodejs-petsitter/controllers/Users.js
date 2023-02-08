@@ -3,8 +3,8 @@
 var utils = require('../utils/writer.js');
 var Users = require('../service/UsersService');
 
-module.exports.usersIdDELETE = function usersIdDELETE (req, res, next, id) {
-  Users.usersIdDELETE(id)
+module.exports.deleteUserById = function deleteUserById (req, res, next, id) {
+  Users.deleteUserById(id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -13,8 +13,8 @@ module.exports.usersIdDELETE = function usersIdDELETE (req, res, next, id) {
     });
 };
 
-module.exports.usersIdGET = function usersIdGET (req, res, next, id) {
-  Users.usersIdGET(id)
+module.exports.getUserById = function getUserById (req, res, next, id) {
+  Users.getUserById(id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -23,8 +23,8 @@ module.exports.usersIdGET = function usersIdGET (req, res, next, id) {
     });
 };
 
-module.exports.usersIdPUT = function usersIdPUT (req, res, next, body, id) {
-  Users.usersIdPUT(body, id)
+module.exports.modifyUserById = function modifyUserById (req, res, next, body, id) {
+  Users.modifyUserById(body, id)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -33,8 +33,8 @@ module.exports.usersIdPUT = function usersIdPUT (req, res, next, body, id) {
     });
 };
 
-module.exports.usersPOST = function usersPOST (req, res, next, body) {
-  Users.usersPOST(body)
+module.exports.registerUser = function registerUser (req, res, next, body) {
+  Users.registerUser(body)
     .then(function (response) {
       utils.writeJson(res, response);
     })

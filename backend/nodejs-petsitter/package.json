@@ -1,6 +1,6 @@
 {
   "name": "petsitter-api",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "This is a set of APIs for the Petsitter Application (which  consists of a MongoDB database, a Node.js backend and a  React.js frontend).    ---  # Users The Users API set allows for the CRUD operations on a user, as well as for the user to create jobs ( as a pet owner), and list their own jobs.  # Jobs The Jobs API set allows for the CRUD operations for pet sitting jobs  # Job Applications This set of APIs is used for the creation of applications for a job, or to see the applications  made against a job.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "connect": "^3.2.0",
     "js-yaml": "^3.3.0",
+    "mongoose": "^6.9.1",
     "oas3-tools": "^2.2.3"
   }
 }

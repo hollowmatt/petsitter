@@ -30,7 +30,7 @@ paths:
       tags:
       - Users
       summary: Register a user
-      operationId: usersPOST
+      operationId: registerUser
       requestBody:
         content:
           application/json:
@@ -51,7 +51,7 @@ paths:
       tags:
       - Users
       summary: View User
-      operationId: usersIdGET
+      operationId: getUserById
       parameters:
       - name: id
         in: path
@@ -59,7 +59,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "200":
           description: OK
@@ -72,7 +72,7 @@ paths:
       tags:
       - Users
       summary: Modify User
-      operationId: usersIdPUT
+      operationId: modifyUserById
       parameters:
       - name: id
         in: path
@@ -98,7 +98,7 @@ paths:
       tags:
       - Users
       summary: Delete User
-      operationId: usersIdDELETE
+      operationId: deleteUserById
       parameters:
       - name: id
         in: path
@@ -116,7 +116,7 @@ paths:
       tags:
       - Jobs
       summary: List jobs for User
-      operationId: usersIdJobsGET
+      operationId: getJobsForUser
       parameters:
       - name: id
         in: path
@@ -124,7 +124,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "200":
           description: OK
@@ -138,7 +138,7 @@ paths:
       tags:
       - Job Applications
       summary: List applications for a given user
-      operationId: usersIdJob_applicatiionsGET
+      operationId: getApplicationsForUser
       parameters:
       - name: id
         in: path
@@ -146,7 +146,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "200":
           description: OK
@@ -174,7 +174,7 @@ paths:
       tags:
       - Jobs
       summary: List all jobs
-      operationId: jobsGET
+      operationId: getAllJobs
       responses:
         "200":
           description: OK
@@ -222,7 +222,7 @@ paths:
       tags:
       - Jobs
       summary: Create a job
-      operationId: jobsPOST
+      operationId: createJob
       requestBody:
         content:
           application/json:
@@ -243,7 +243,7 @@ paths:
       tags:
       - Jobs
       summary: View Job
-      operationId: jobsIdGET
+      operationId: getJobById
       parameters:
       - name: id
         in: path
@@ -251,7 +251,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "200":
           description: OK
@@ -272,7 +272,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       requestBody:
         content:
           application/json:
@@ -290,7 +290,7 @@ paths:
       tags:
       - Jobs
       summary: Delete Job
-      operationId: jobsIdDELETE
+      operationId: deleteJobById
       parameters:
       - name: id
         in: path
@@ -298,7 +298,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "204":
           description: No Content
@@ -308,7 +308,7 @@ paths:
       tags:
       - Job Applications
       summary: List Applications For Job
-      operationId: jobsIdJob_applicationsGET
+      operationId: getApplicationsByJob
       parameters:
       - name: id
         in: path
@@ -316,7 +316,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       responses:
         "200":
           description: OK
@@ -329,7 +329,7 @@ paths:
       tags:
       - Job Applications
       summary: Create Job Application
-      operationId: jobsIdJob_applicationsPOST
+      operationId: createJobApplication
       parameters:
       - name: id
         in: path
@@ -337,7 +337,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       requestBody:
         content:
           application/json:
@@ -358,7 +358,7 @@ paths:
       tags:
       - Job Applications
       summary: Modify Job Application
-      operationId: job_applicationsIdPUT
+      operationId: modifyJobApplication
       parameters:
       - name: id
         in: path
@@ -366,7 +366,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: integer
+          type: string
       requestBody:
         description: Update the application details
         content:
@@ -387,7 +387,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
         email:
           type: string
         full_name:
@@ -407,9 +407,9 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
         creator_user_id:
-          type: integer
+          type: string
         start_time:
           type: string
         activity:
@@ -450,13 +450,13 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
         status:
           type: string
         user_id:
-          type: integer
+          type: string
         job_id:
-          type: integer
+          type: string
       example:
         user_id: 6
         job_id: 1

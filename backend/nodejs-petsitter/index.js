@@ -1,10 +1,18 @@
 'use strict';
 
+const databaseUrl = 'mongodb://127.0.0.1/petsitter_db';
+const mongoose = require('mongoose');
+
 var path = require('path');
 var http = require('http');
 
 var oas3Tools = require('oas3-tools');
 var serverPort = 8080;
+
+mongoose.connect(databaseUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 // swaggerRouter configuration
 var options = {
