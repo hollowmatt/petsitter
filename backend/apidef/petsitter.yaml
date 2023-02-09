@@ -34,6 +34,30 @@ tags:
   - name: Job Applications
     description: Job applications by a pet sitter for a job.
 paths:
+  /sessions:
+    post:
+      tags:
+      - Users
+      summary: Start session (login)
+      operationId: startSession
+      responses:
+        '200':
+          description: OK
+          content:  
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:  
+                  type: string
+                password:
+                  type: string
+      security: []
   /users:
     post:
       tags:
@@ -52,6 +76,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
+      security: []
   /users/{id}:
    parameters:
      - schema:
@@ -385,3 +410,17 @@ components:
           type: string
         job_id:
           type: string
+    Session:
+      type: object
+      properties:
+        user_id: 
+          type: string
+        auth_header:
+          type: string
+  securitySchemes:
+    SessionToken:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+  - SessionToken: []
