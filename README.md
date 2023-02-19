@@ -22,7 +22,7 @@ Using Prism for mocking APIs
 `prism mock -p 8080 ./backend/apidef/petsitter.yaml`
 
 ## Database/Storage
-TBD, but likely something like MongoDB
+MongoDB
 
 ## API Definitions
 Will follow OpenAPI 3+ standards, using SwaggerUI.
